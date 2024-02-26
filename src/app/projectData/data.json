@@ -1,0 +1,72 @@
+[
+  {
+    "image": "https://raw.githubusercontent.com/RemWinter/5874-tech-test/5bb0a7093af9c89451cf0ac61f307689da96886f/public/whellies01.png",
+    "title": "Project 1",
+    "description1": "Project 1 description",
+    "description2": "Extra words",
+    "cardSize": 1
+  },
+  {
+    "image": "https://raw.githubusercontent.com/RemWinter/5874-tech-test/5bb0a7093af9c89451cf0ac61f307689da96886f/public/newspaper02.png",
+    "title": "Make Ideas Happen",
+    "description1": "A local paper with big ideas needed",
+    "description2": "A sharp new brand to inspire readers.",
+    "cardSize": 1
+  },
+  {
+    "image": "https://raw.githubusercontent.com/RemWinter/5874-tech-test/5bb0a7093af9c89451cf0ac61f307689da96886f/public/makerek.png",
+    "title": "Project 3",
+    "description1": "Project 3 description",
+    "description2": "Extra words",
+    "cardSize": 2
+  },
+  {
+    "image": "https://raw.githubusercontent.com/RemWinter/5874-tech-test/5bb0a7093af9c89451cf0ac61f307689da96886f/public/newspaper.png",
+    "title": "Project 4",
+    "description1": "Project 4 description",
+    "description2": "Extra words",
+    "cardSize": 1
+  },
+  {
+    "image": "https://raw.githubusercontent.com/RemWinter/5874-tech-test/5bb0a7093af9c89451cf0ac61f307689da96886f/public/rider.png",
+    "title": "Project 5",
+    "description1": "Project 5 description",
+    "description2": "Extra words",
+    "cardSize": 1
+  },
+  {
+    "image": "https://raw.githubusercontent.com/RemWinter/5874-tech-test/5bb0a7093af9c89451cf0ac61f307689da96886f/public/newspaper.png",
+    "title": "Project 6",
+    "description1": "Project 6 description",
+    "description2": "Extra words",
+    "cardSize": 1
+  },
+  {
+    "image": "https://raw.githubusercontent.com/RemWinter/5874-tech-test/5bb0a7093af9c89451cf0ac61f307689da96886f/public/newspaper02.png",
+    "title": "Project 7",
+    "description1": "Project 7 description",
+    "description2": "Extra words",
+    "cardSize": 2
+  },
+  {
+    "image": "https://raw.githubusercontent.com/RemWinter/5874-tech-test/5bb0a7093af9c89451cf0ac61f307689da96886f/public/rider.png",
+    "title": "Project 8",
+    "description1": "Project 8 description",
+    "description2": "Extra words",
+    "cardSize": 1
+  },
+  {
+    "image": "https://raw.githubusercontent.com/RemWinter/5874-tech-test/5bb0a7093af9c89451cf0ac61f307689da96886f/public/makerek.png",
+    "title": "Project 9",
+    "description1": "Project 9 description",
+    "description2": "Extra words",
+    "cardSize": 1
+  },
+  {
+    "image": "https://raw.githubusercontent.com/RemWinter/5874-tech-test/5bb0a7093af9c89451cf0ac61f307689da96886f/public/whellies01.png",
+    "title": "Project 10",
+    "description1": "Project 10 description",
+    "description2": "Extra words",
+    "cardSize": 1
+  }
+]

@@ -1,0 +1,21 @@
+.navbarContainer {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding: 30px 100px;
+    position: fixed;
+    top: 0;
+}
+
+.navItemsContainer {
+    display: flex;
+    flex-direction: 'row';
+    gap: 65px;
+    align-items: center;
+}
+
+.navOption {
+    text-transform: capitalize;
+    font-size: 15px;
+    color: #fff;
+}

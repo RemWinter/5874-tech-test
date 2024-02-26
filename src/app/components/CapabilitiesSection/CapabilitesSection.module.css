@@ -1,0 +1,36 @@
+.capabilitiesContainer {
+  background-color: #EDEFF1;
+  padding: 100px 200px ;
+  display: flex;
+  flex-direction: row;
+}
+
+.containerRight {
+  display: flex;
+  flex-direction: row;
+  padding-left: 50px;
+}
+
+.listHeader {
+  font-size: 15px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 20px;
+}
+
+.listContainer {
+  display: flex;
+  flex-direction: column;
+}
+
+.list {
+  list-style: none;
+  color: #506473;
+  font-size: 15px;
+  font-weight: 500;
+  letter-spacing: 1px;
+}
+
+.listItem {
+  margin-bottom: 25px;
+}

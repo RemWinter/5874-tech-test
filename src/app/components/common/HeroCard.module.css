@@ -1,0 +1,36 @@
+.heroTextContainer {
+  flex-direction: column;
+  justify-content: center;
+  max-width: 60%;
+}
+
+.heading {
+  font-size: 37px;
+  width: 100%;
+  margin-bottom: 42px;
+  /* letter-spacing: 1px; */
+}
+
+.subHeading {
+  font-size: 12px;
+  width: 100%;
+  color: #C0345E;
+  font-weight: 500;
+  opacity: 75%;
+  margin-bottom: 42px;
+}
+
+.description {
+  color: #506473;
+  font-size: 16px;
+  line-height: 29px;
+  font-weight: 300;
+  margin-bottom: 42px;
+  max-width: 300px;
+}
+
+.link {
+  font-size: 15px;
+  border-bottom: #C0345E 2px solid;
+  padding-bottom: 2px;
+}

@@ -1,0 +1,24 @@
+.heroContainer {
+    display: flex;
+    flex-direction: row;
+    height: 100vh;
+    width: 100%;
+}
+
+.heroItem {
+    width: 100%;
+    display: flex;
+    margin: auto;
+    height: 100%;
+}
+
+.heroLeft {
+    /* justify-content: center; */
+    align-items: center;
+    padding-left: 200px;
+    width: 50%;
+}
+
+.heroRight {
+    width: 50%;
+}

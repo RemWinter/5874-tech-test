@@ -1,7 +1,8 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import styles from './CapabilitesSection.module.css'
 import stylesHeroCard from '../common/HeroCard.module.css'
 import { HeroCard } from '../common'
+import { useAppSelector } from '../redux/store'
 
 interface heroCardData {
   subHeader:string
@@ -18,6 +19,8 @@ interface ListItem {
 }
 
 const CapabilitiesSection = () => {
+  const { dimensions } = useAppSelector(state => state.landingSlice)
+  const [isMobile, setIsMobile] = useState<boolean>(!!(window.innerWidth <= 1050 ))
   const heroCardText: heroCardData = {
     subHeader: '',
     headerTop: 'What are',
@@ -26,6 +29,10 @@ const CapabilitiesSection = () => {
     link: "Our process",
     linkHref: "#",
   }
+
+  useEffect(() => {
+    setIsMobile(!!((dimensions.x) <= 1050))
+  }, [dimensions])
 
   const brandItems: ListItem[] = [
     {item: 'Brand Strategy', link:'#'},
@@ -43,18 +50,36 @@ const CapabilitiesSection = () => {
   ] 
 
   return (
-    <div className={styles.capabilitiesContainer}>
-      <div className={stylesHeroCard.heroTextContainer} style={{width: '50%'}}>
-        <HeroCard data={heroCardText} subHeader={false}/>
+    <div className={styles.capabilitiesContainer} style={{flexDirection: isMobile ? 'column' : 'row'}}>
+      <div 
+        className={stylesHeroCard.heroTextContainer} 
+        style={isMobile ? {width: '100%', maxWidth: '100%', textAlign: 'center'} : {width: '50%'}}
+      >
+        <HeroCard data={heroCardText} subHeader={false} isMobile={isMobile}/>
       </div>
-      <div className={styles.containerRight}>
-        <div className={styles.listContainer}>
-          <List header='Brand' listItems={brandItems}/>
-          <List header='Development' listItems={developmentItem}/>
+      <div 
+        className={styles.containerRight}
+        style={isMobile ? {
+          paddingLeft: '0',
+          justifyContent: 'center',
+          textAlign: 'center'
+        } : {}}
+      >
+        <div className={styles.listContainer} style={{
+          flexDirection: isMobile ? 'row' : 'column', 
+          marginTop: isMobile ? '70px' : 'unset' 
+        }}>
+          <List header='Brand' listItems={brandItems} isMobile={isMobile}/>
+          <List header='Development' listItems={developmentItem} isMobile={isMobile}/>
+          {dimensions.x <= 1050 &&
+            <List header='Marketing' listItems={marketingItem} isMobile={isMobile}/>
+          }
         </div>
-        <div style={{marginLeft:'100px'}}>
-          <List header='Marketing' listItems={marketingItem}/>
-        </div>
+        {dimensions.x > 1050 &&
+          <div style={{marginLeft:'100px'}}>
+            <List header='Marketing' listItems={marketingItem}/>
+          </div>
+        }
       </div>
     </div>
   )
@@ -62,14 +87,15 @@ const CapabilitiesSection = () => {
 
 interface ListProps {
   header: string,
-  listItems: ListItem[]
+  listItems: ListItem[],
+  isMobile?: boolean
 }
 
 const List: React.FC<ListProps> = (props:ListProps) => { // Would normally destructure props but demonstrating I'm comfortable with both methods. See HeroCard for destructured example
   return (
     <div>
       <h1 className={styles.listHeader}>{props.header}</h1>
-        <div>
+        <div style={props.isMobile ? {margin: '0 30px'} : {}}>
           <ul className={styles.list}>
             {props.listItems.map((item, index) => (
               <li key={index} className={styles.listItem}>

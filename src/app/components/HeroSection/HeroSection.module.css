@@ -15,10 +15,18 @@
 .heroLeft {
     /* justify-content: center; */
     align-items: center;
-    padding-left: 200px;
+    /* padding-left: 200px; */
+    padding-left: 16%;
     width: 50%;
+    text-align: left;
 }
 
 .heroRight {
     width: 50%;
+}
+
+@media screen and (max-width:1050px) {
+    /* .heroLeft {
+        text-align: center;
+    } */
 }

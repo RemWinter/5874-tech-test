@@ -13,14 +13,21 @@ interface ProjectTab {
   title: string;
 }
 
+interface Dimentions {
+  x:number;
+  y:number;
+}
+
 type LandingState = {
   projectTabs: ProjectTab[] | null;
   projectData: ProjectCard[] | null;
+  dimensions: Dimentions
 };
 
 const initialState: LandingState = {
   projectTabs: [{title:'all'}],
-  projectData: null
+  projectData: null,
+  dimensions: {x:1920, y:1080}
 }
 
 export const getTabs = createAsyncThunk(
@@ -30,9 +37,7 @@ export const getTabs = createAsyncThunk(
     thunkAPI
   ) => {
     try {
-      console.log('first')
       const res = await getTabsAPI();
-      console.log(res)
       return res;
     } catch (error) {
       return thunkAPI.rejectWithValue(error);
@@ -65,6 +70,9 @@ export const landingSlice = createSlice({
     setProjectData: (state, action: PayloadAction<ProjectCard[] | null>) => {
       state.projectData = action.payload;
     },
+    setDimensions: (state, action: PayloadAction<Dimentions>) => {
+      state.dimensions = action.payload;
+    },
   },
   extraReducers: (builder) => {
     builder
@@ -77,7 +85,7 @@ export const landingSlice = createSlice({
   },
 });
 
-export const { setProjectTabs, setProjectData } =
+export const { setProjectTabs, setProjectData, setDimensions } =
   landingSlice.actions;
 
 const landingReducer = landingSlice.reducer;

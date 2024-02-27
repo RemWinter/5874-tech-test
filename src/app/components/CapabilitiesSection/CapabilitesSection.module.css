@@ -1,6 +1,6 @@
 .capabilitiesContainer {
   background-color: #EDEFF1;
-  padding: 100px 200px ;
+  padding: 100px 16% ;
   display: flex;
   flex-direction: row;
 }
@@ -33,4 +33,11 @@
 
 .listItem {
   margin-bottom: 25px;
+}
+
+@media screen and (max-width:1050px) {
+  .list {
+    font-size: 14px !important;
+    letter-spacing: 0px !important;
+  }
 }

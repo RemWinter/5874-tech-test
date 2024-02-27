@@ -1,8 +1,10 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import styles from './HeroSection.module.css'
 import stylesHeroCard from '../common/HeroCard.module.css'
 import Image from 'next/image'
 import { HeroCard } from '../common'
+import { useAppSelector } from '../redux/store'
+import { landingSlice } from '../redux/landingSlice'
 
 interface heroCardData {
   subHeader:string
@@ -14,6 +16,7 @@ interface heroCardData {
 }
 
 const HeroSection = () => {
+  const { dimensions } = useAppSelector(state => state.landingSlice)
   const heroCardText: heroCardData = {
     subHeader: 'BRAND, DEV, ECOM, MARKETING',
     headerTop: 'We unleash',
@@ -22,11 +25,13 @@ const HeroSection = () => {
     link: "Let's talk",
     linkHref: "#",
   }
+
   return (
+    dimensions.x > 1050 ?
     <div className={styles.heroContainer}>
       <div className={`${styles.heroItem} ${styles.heroLeft}`}>
-      <div className={styles.stylesHeroCard}>
-          <HeroCard data={heroCardText}/>
+        <div className={styles.stylesHeroCard}>
+            <HeroCard data={heroCardText}/>
         </div>
       </div>
       <div className={`${styles.heroItem} ${styles.heroRight}`}>
@@ -38,6 +43,21 @@ const HeroSection = () => {
           sizes="100vw"
           style={{ width: '100%', height: '100%', objectFit:'cover' }}
         />
+      </div>
+    </div>
+    :
+    <div style={{
+      display: 'flex',
+      width: '100%',
+      paddingTop:'200px',
+      backgroundImage:'url(/Spaniel01_gradient.png)',
+      backgroundSize: 'cover',
+      backgroundRepeat: 'no-repeat',
+      backgroundPosition: 'center center',
+      textAlign: 'center'
+      }}>
+      <div className={styles.stylesHeroCard} style={{margin: 'auto', height: '500px'}}>
+              <HeroCard data={heroCardText} darkMode={!!((dimensions.x) <= 1050)}/>
       </div>
     </div>
   )

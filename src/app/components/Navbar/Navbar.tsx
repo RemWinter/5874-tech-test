@@ -1,8 +1,28 @@
-import React from 'react'
+'use client'
+import React, { useEffect, useState } from 'react'
 import styles from './Navbar.module.css'
 import Image from 'next/image'
 
 const Navbar = () => {
+  const [prevScrollPos, setPrevScrollPos] = useState<number>(0);
+  const [visible, setVisible] = useState<boolean>(true);
+  const [atTop, setAtTop] = useState<boolean>(true);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollPos = window.scrollY;
+      setAtTop(window.scrollY > 50 ? false : true)
+      setVisible(prevScrollPos > currentScrollPos || currentScrollPos < 10);
+      setPrevScrollPos(currentScrollPos);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, [prevScrollPos, visible]);
+
   const navOptions: string[] = [
     'services',
     'work',
@@ -11,7 +31,7 @@ const Navbar = () => {
     'contact',
   ]
   return (
-    <div className={styles.navbarContainer}>
+    <div className={styles.navbarContainer} style={{ top: visible ? '0' : '-200px', backgroundColor: atTop ? 'rgba(0,0,0,0)' : '#506473'}}>
       <div>
         <Image
           src='/Digital Spaniel logo01-01.png'
@@ -30,7 +50,6 @@ interface NavItemsProps {
 }
 
 const NavItems: React.FC<NavItemsProps> = ({navOptions}) => {
-
   return (
     <div className={styles.navItemsContainer}>
       { navOptions.map((option) => (

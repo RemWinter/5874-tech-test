@@ -19,7 +19,7 @@ interface ListItem {
 
 const CapabilitiesSection = () => {
   const heroCardText: heroCardData = {
-    subHeader: 'BRAND, DEV, ECOM, MARKETING',
+    subHeader: '',
     headerTop: 'What are',
     headerBottom: 'we capable of',
     description: 'By focusing on design as an enabler and putting a huge emphasis on our clients as co-producers, we create innovative, sustainable marketing that enhances brand experience and user engagement.',

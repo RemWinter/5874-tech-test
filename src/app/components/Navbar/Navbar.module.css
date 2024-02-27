@@ -5,6 +5,9 @@
     padding: 30px 100px;
     position: fixed;
     top: 0;
+    transition: 1s;
+    /* filter: drop-shadow(black 2px 4px 6px); */
+    z-index: 5;
 }
 
 .navItemsContainer {
@@ -18,4 +21,11 @@
     text-transform: capitalize;
     font-size: 15px;
     color: #fff;
+    cursor: pointer;
+    padding: 5px 0;
+}
+
+.navOption:hover {
+    border-bottom: 2px #fff solid;
+    
 }

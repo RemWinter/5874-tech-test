@@ -12,7 +12,7 @@ import { IoChevronBackOutline, IoChevronForwardOutline } from "react-icons/io5";
 const ProjectsSection = () => {
 
   const { dimensions } = useAppSelector(state => state.landingSlice)
-  const [isMobile, setIsMobile] = useState<boolean>(!!(window.innerWidth <= 1050))
+  const [isMobile, setIsMobile] = useState<boolean>(false)
 
   useEffect(() => {
     setIsMobile(!!((dimensions.x) <= 1050))
@@ -85,8 +85,9 @@ const Tabs: React.FC<TabsProps> = ({tabs, dispatch}) => {
   }
   return (
     <div className={styles.tabsContainer}>
-      {tabs?.map(tab => (
+      {tabs?.map((tab, index) => (
         <div 
+          key={index}
           className={styles.tab} 
           style={
             activeTab === tab.title ? tabActiveStyle : tabStyle
@@ -182,6 +183,7 @@ const Carousel: React.FC<{isMobile: boolean}> = ({isMobile}) => {
                       //   >
                       // </div>
                       <div 
+                        key={index}
                         onMouseOver={() => {setCardHover(index)}}
                         onMouseOut={() => setCardHover(null)}
                         className={styles.project} 
@@ -261,6 +263,7 @@ const Carousel: React.FC<{isMobile: boolean}> = ({isMobile}) => {
             return(
                 
                 <div 
+                  key={index}
                   className={styles.project} 
                   style={{
                     backgroundImage:`url(${project.image})`, minWidth:`calc(${project.cardSize*30}% + ${extraWidth})`,

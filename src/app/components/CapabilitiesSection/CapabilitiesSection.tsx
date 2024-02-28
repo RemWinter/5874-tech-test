@@ -20,7 +20,7 @@ interface ListItem {
 
 const CapabilitiesSection = () => {
   const { dimensions } = useAppSelector(state => state.landingSlice)
-  const [isMobile, setIsMobile] = useState<boolean>(!!(window.innerWidth <= 1050 ))
+  const [isMobile, setIsMobile] = useState<boolean>()
   const heroCardText: heroCardData = {
     subHeader: '',
     headerTop: 'What are',

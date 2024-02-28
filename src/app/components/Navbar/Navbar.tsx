@@ -107,8 +107,8 @@ interface NavItemsProps {
 const NavItems: React.FC<NavItemsProps> = ({navOptions}) => {
   return (
     <div className={styles.navItemsContainer}>
-      { navOptions.map((option) => (
-        <div>
+      { navOptions.map((option, index) => (
+        <div key={index}>
           <h1 className={styles.navOption}>
             {option}
           </h1>
@@ -144,8 +144,8 @@ const MobileNav: React.FC<MobileNavProps> = ({open, toggleOpen, navOptions, wind
           className={styles.mobileNavContainer}
         >
           <div className={styles.menuItemsContainer}>
-            {navOptions.map((item) => (
-              <div onClick={() => toggleOpen()}>
+            {navOptions.map((item, index) => (
+              <div key={index} onClick={() => toggleOpen()}>
                 <a href="#">{item}</a>
               </div>
             ))}
